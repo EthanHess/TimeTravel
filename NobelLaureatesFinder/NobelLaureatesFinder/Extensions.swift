@@ -43,3 +43,24 @@ extension Date {
         return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
     }
 }
+
+extension UIColor {
+    static func fromRGB(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
+    }
+    
+    static func mainBlue() -> UIColor {
+        return UIColor.fromRGB(red: 17, green: 154, blue: 327)
+    }
+    
+    static func darkBlue() -> UIColor {
+        return UIColor.fromRGB(red: 5, green: 22, blue: 155)
+    }
+    
+    static func random() -> UIColor {
+        let RR = CGFloat(drand48())
+        let RG = CGFloat(drand48())
+        let RB = CGFloat(drand48())
+        return UIColor(red: CGFloat(RR), green: CGFloat(RG), blue: CGFloat(RB), alpha: 1.0)
+    }
+}

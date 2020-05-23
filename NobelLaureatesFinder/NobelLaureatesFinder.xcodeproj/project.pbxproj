@@ -20,6 +20,8 @@
 		273FAFDD246F38C3006A49BE /* NobelLaureate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273FAFDC246F38C3006A49BE /* NobelLaureate.swift */; };
 		273FAFDF246F3F3E006A49BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273FAFDE246F3F3E006A49BE /* Extensions.swift */; };
 		273FAFE1246F4184006A49BE /* LogAuxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273FAFE0246F4184006A49BE /* LogAuxiliary.swift */; };
+		27F7F8A2247863C5007C7526 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7F8A1247863C5007C7526 /* CustomLoadingView.swift */; };
+		27F7F8A42478640E007C7526 /* MiniPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7F8A32478640E007C7526 /* MiniPieChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		273FAFDC246F38C3006A49BE /* NobelLaureate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NobelLaureate.swift; sourceTree = "<group>"; };
 		273FAFDE246F3F3E006A49BE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		273FAFE0246F4184006A49BE /* LogAuxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAuxiliary.swift; sourceTree = "<group>"; };
+		27F7F8A1247863C5007C7526 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
+		27F7F8A32478640E007C7526 /* MiniPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPieChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				273FAFE0246F4184006A49BE /* LogAuxiliary.swift */,
 				273E259224707CF1002A7420 /* GlobalFunctions.swift */,
 				273FAFDE246F3F3E006A49BE /* Extensions.swift */,
+				27F7F8A1247863C5007C7526 /* CustomLoadingView.swift */,
+				27F7F8A32478640E007C7526 /* MiniPieChart.swift */,
 				273FAFD8246F33F3006A49BE /* nobel-prize-laureates.json */,
 				273FAFC2246F32D1006A49BE /* Products */,
 				273FAFCA246F32D1006A49BE /* Main.storyboard */,
@@ -162,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				273FAFDB246F3706006A49BE /* NetworkController.swift in Sources */,
+				27F7F8A42478640E007C7526 /* MiniPieChart.swift in Sources */,
 				273E259524707E06002A7420 /* Algorithm.swift in Sources */,
 				273FAFDF246F3F3E006A49BE /* Extensions.swift in Sources */,
 				273E259324707CF1002A7420 /* GlobalFunctions.swift in Sources */,
@@ -169,6 +176,7 @@
 				273FAFC5246F32D1006A49BE /* AppDelegate.swift in Sources */,
 				273FAFC7246F32D1006A49BE /* SceneDelegate.swift in Sources */,
 				273FAFDD246F38C3006A49BE /* NobelLaureate.swift in Sources */,
+				27F7F8A2247863C5007C7526 /* CustomLoadingView.swift in Sources */,
 				273FAFE1246F4184006A49BE /* LogAuxiliary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

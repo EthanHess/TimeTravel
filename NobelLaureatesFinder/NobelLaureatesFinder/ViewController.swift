@@ -70,6 +70,11 @@ class ViewController: UIViewController {
         return tv
     }()
     
+    let loadingView : CustomLoadingView = {
+        let clv = CustomLoadingView()
+        return clv
+    }()
+    
     var laureateArray : [NobelLaureate] = []
     var filteredLaureateArray : [NobelLaureate] = [] //populate tableview + annotations
     
@@ -162,9 +167,22 @@ class ViewController: UIViewController {
     //MARK UI setup
     
     fileprivate func configureViews() {
-        
+        loadingViewConfiguration()
         textFieldsSetup()
         fetchData()
+    }
+    
+    fileprivate func loadingViewConfiguration() {
+        loadingView.frame = loadingFrame()
+        loadingView.viewConfig()
+        loadingView.visibilityHandler(show: false)
+        view.addSubview(loadingView)
+    }
+    
+    fileprivate func loadingFrame() -> CGRect {
+        let xCoord = (view.frame.size.width / 2) - 50
+        let yCoord = (view.frame.size.height / 2) - 75
+        return CGRect(x: xCoord, y: yCoord, width: 100, height: 150)
     }
     
     fileprivate func textFieldsSetup() {
@@ -213,7 +231,7 @@ class ViewController: UIViewController {
     }
     
     fileprivate func tableViewSetup() {
-        view.addSubview(resultsTable)
+        view.insertSubview(resultsTable, belowSubview: loadingView)
         resultsTable.anchor(top: fieldContainer.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: 0, height: 0)
         stylizeView(view: resultsTable)
         mapSetup()
@@ -231,14 +249,17 @@ class ViewController: UIViewController {
             Logger.log("--- Invalid URL ---")
             return
         }
+        self.loadingView.visibilityHandler(show: true)
         NetworkController.fetchDataFromJSON(theURL: url) { (laureates, error) in
             if error != nil {
+                self.loadingView.visibilityHandler(show: false)
                 Logger.log("\(error?.localizedDescription ?? "--- No description ---")")
             } else {
                 if let laureatesArray = laureates {
                     Logger.log("LAUREATES \(laureatesArray)")
                     self.laureateArray = laureatesArray
                     self.hasLoadedData = true
+                    self.loadingView.visibilityHandler(show: false)
                     //Won't do anything on initial fetch, will sort input of UITextFields
                 }
             }
